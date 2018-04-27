@@ -1,0 +1,24 @@
+{
+  "name": "weekend-3-mean-todo-list",
+  "version": "1.0.0",
+  "description": "Hello Primers!",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superginrai/weekend-3-mean-todo-list.git"
+  },
+  "author": "Cory Booth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/superginrai/weekend-3-mean-todo-list/issues"
+  },
+  "homepage": "https://github.com/superginrai/weekend-3-mean-todo-list#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  }
+}
