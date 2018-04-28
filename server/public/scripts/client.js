@@ -6,14 +6,12 @@ app.controller('DoingStuffController', ['$http', function ($http) {
     console.log('DoingStuffController has been loaded');
     let self = this;
 
-    self.things = listThings();
+    self.things = [];
 
     self.newThing = {};
 
-    listThings();
-
     // get request for all the things on your to-do list!!    
-    function listThings() {
+    self.listThings = function () {
         $http({
             method: 'GET',
             url: '/thing'
@@ -32,17 +30,16 @@ app.controller('DoingStuffController', ['$http', function ($http) {
         console.log('Add this to mah list:', self.newThing);
         $http({
             method: 'POST',
-            data: self.newThing,
-            url: '/thing'
+            url: '/thing',
+            data: self.newThing
         })
             .then(function (response) {
                 console.log('hoorah you got a thing!', response);
+            self.listThings();
             })
             .catch(function (error) {
                 console.log('error on /thing POST', error);
             });
-
-        listThings();
     }
 
     // request Thing object deletion from the database through the server
@@ -50,16 +47,16 @@ app.controller('DoingStuffController', ['$http', function ($http) {
         console.log(noLongerImportant, 'has been taken off the list')
         $http({
             method: 'DELETE',
-            url: `/thing/${noLongerImportant._id}`,
+            url: '/thing',
+            params: noLongerImportant
         })
             .then(function (response) {
                 console.log(response);
+            self.listThings();
             })
             .catch(function (error) {
                 console.log('error on Thing DELETE', error);
             });
-
-        listThings();
     }
 
 

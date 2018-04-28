@@ -16,6 +16,7 @@
     <h2>...and Things!!!</h2>
     <div>
         <input type="text" name="New THING to DO!" ng-model="vm.newThing.name" placeholder="New THING to DO!" />
+        <input type="checkbox" ng-model="vm.newThing.complete" placeholder="Already Dun?" />
         <button ng-click="vm.createThing()">Add to The List!</button>
     </div>
     <div>
@@ -29,12 +30,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr id={{thing._id}} ng-repeat="thing in vm.things">
+                <tr ng-repeat="thing in vm.things" ng-class="{'completed': thing.complete}">
                     <td>
                         <input ng-model="thing.name">
                     </td>
                     <td>
-                        <input type="checkbox">
+                        <input type="checkbox" ng-model="thing.complete">
                     </td>
                     <td>
                         <button ng-click="vm.deleteThing(thing)">Delete</button>

@@ -13,35 +13,32 @@ router.get('/', (req, res) => {
     .catch((error) => {
         console.log('GET thing error:', error);
         res.sendStatus(500);
-    })
+    });
 });
 
 //POST a new Thing to the database
 router.post('/', (req, res) => {
-    const newThing = req.body;
     console.log('POST: new Thing');
-    Thing.create(newThing)
+    Thing.create(req.body)
     .then(() => {
         res.sendStatus(200);
     })
     .catch((error) => {
         console.log('POST Thing error:', error);
         res.sendStatus(500);
-    })
+    });
 });
 
 //DELETE a Thing object from the database
-router.delete('/:id', (req, res) => {
-    const thingToDelete = req.params.id;
-    console.log('DELETE: /thing/', thingToDelete);
-    Thing.remove({_id: thingToDelete})
+router.delete('/', (req, res) => {
+    Thing.findByIdAndRemove(req.query._id)
     .then(() => {
         res.sendStatus(200);
     })
     .catch((error) => {
         console.log('DELETE Thing error', error);
         res.sendStatus(500);
-    })
+    });
 });
 
 

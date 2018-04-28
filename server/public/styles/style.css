@@ -1,0 +1,21 @@
+.unComplete {
+    background-color: darkcyan;
+    color: darkslateblue;
+}
+
+h1 {
+    color: darkorchid;
+}
+
+.snacks {
+    color: darkorange;
+}
+
+.complete {
+    color: darkolivegreen;
+    font-family: fantasy;
+}
+
+.completed {
+    color: yellowgreen;
+}
