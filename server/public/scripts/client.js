@@ -59,6 +59,21 @@ app.controller('DoingStuffController', ['$http', function ($http) {
             });
     }
 
-
-
+    self.completeThing = function(thingToComplete) {
+        console.log('I completed this task!:', thingToComplete);
+        $http({
+            method: 'PUT',
+            url: '/thing',
+            data: thingToComplete
+        })
+        .then(function(response) {
+            console.log('response from PUT', response);
+            self.listThings();
+        })
+        .catch(function(error){
+            console.log('error on /thing PUT', error);
+        });
+    }
+    
+    self.listThings();
 }])

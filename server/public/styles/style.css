@@ -1,4 +1,4 @@
-.unComplete {
+.uncomplete {
     background-color: darkcyan;
     color: darkslateblue;
 }
@@ -18,4 +18,10 @@ h1 {
 
 .completed {
     color: yellowgreen;
+    background-color: yellowgreen;
+}
+
+.uncompleted {
+    color: tomato;
+    background-color: tomato;
 }
