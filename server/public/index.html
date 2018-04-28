@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/style.css">
     <script src="vendors/angular.min.js" charset="utf-8"></script>
     <script src="scripts/client.js" charset="utf-8"></script>
@@ -12,34 +13,37 @@
 </head>
 
 <body ng-app="DoingStuffApp" ng-controller="DoingStuffController as vm">
-    <h1>Doing Stuff!!</h1>
-    <h2>...and Things!!!</h2>
+    <h1>Hyrax High-Rise</h1>
+    <h2>Where a Hyrax can relax for 95% of the time!</h2>
+    <h3>Sometimes Hyraxes only get to relax for 85%-90% of the time.</h3>
+    <h4>At Hyrax High-Rise, we take the relaxation of manatee-related land creatures seriously!!</h4>
     <div>
-        <input type="text" name="New THING to DO!" ng-model="vm.newThing.name" placeholder="New THING to DO!" />
-        <input type="boolean" name="Complete me field" ng-model="vm.newThing.complete" placeholder="U dun this yet?" /> 
+        <input type="text" name="New THING to DO!" ng-model="vm.newThing.name" placeholder="New Relaxation Event!" />
+        <input type="boolean" name="Complete me field" ng-model="vm.newThing.complete" placeholder="Have you done this yet?" /> 
       <!--  <input type="checkbox" ng-model="vm.newThing.complete" placeholder="Already Dun?" />-->
-        <button ng-click="vm.createThing()">Add to The List!</button>
+        <button ng-click="vm.createThing()">Add to Your Stay!</button>
     </div>
     <div>
-        <h3>The List:</h3>
+        <h1 id="stay">Your Stay:</h1>
         <table>
             <thead>
                 <tr>
-                    <th>THING to DO!!</th>
-                    <th>Complete!</th>
-                    <th>Delete!</th>
+                    <th>Relaxation Event</th>
+                    <th>Complete Event!</th>
+                    <th>Update your Event!</th>
+                    <th>Delete Event!</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class ="uncompleted">
                 <tr ng-class="{'completed': thing.complete}" ng-repeat="thing in vm.things">
                     <td>
                         <input ng-model="thing.name">
                     </td>
                     <td>
-                        <input ng-model="thing.complete">
+                        <input type="checkbox" ng-model="thing.complete">
                     </td>
                     <td>
-                        <button ng-click="vm.completeThing(thing)">Update your Stuff and Things!</button>
+                        <button ng-click="vm.completeThing(thing)">Update Changes!</button>
                     </td>
                     <td>
                         <button ng-click="vm.deleteThing(thing)">Delete</button>
