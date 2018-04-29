@@ -10,6 +10,20 @@ app.controller('DoingStuffController', ['$http', function ($http) {
 
     self.newThing = {};
 
+    //displays a demo stay at Hyrax High-Rise!!
+    self.hyraxDemo = function () {
+        $http({
+            method: 'GET',
+            url: '/hyrax'
+        })
+            .then(function (response) {
+                self.things = response.data;
+            })
+            .catch(function (error) {
+                console.log('error pm /hyrax GET', error);
+            });
+    }
+
     // get request for all the things on your to-do list!!    
     self.listThings = function () {
         $http({
@@ -76,4 +90,5 @@ app.controller('DoingStuffController', ['$http', function ($http) {
     }
     
     self.listThings();
+    self.hyraxDemo();
 }])

@@ -5,21 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
     <script src="vendors/angular.min.js" charset="utf-8"></script>
     <script src="scripts/client.js" charset="utf-8"></script>
     <title>Document</title>
 </head>
 
 <body ng-app="DoingStuffApp" ng-controller="DoingStuffController as vm">
-    <h1>Hyrax High-Rise</h1>
+    <h1 id="title">Hyrax High-Rise</h1>
     <h2>Where a Hyrax can relax for 95% of the time!</h2>
     <h3>Sometimes Hyraxes only get to relax for 85%-90% of the time.</h3>
-    <h4>At Hyrax High-Rise, we take the relaxation of manatee-related land creatures seriously!!</h4>
+    <h4>At Hyrax High-Rise, we take the relaxation of manatee-related land mammals seriously!!</h4>
     <div>
         <input type="text" name="New THING to DO!" ng-model="vm.newThing.name" placeholder="New Relaxation Event!" />
-        <input type="boolean" name="Complete me field" ng-model="vm.newThing.complete" placeholder="Have you done this yet?" /> 
+        <input type="boolean" name="Complete me field" ng-model="vm.newThing.complete" placeholder="Done this yet?" /> 
       <!--  <input type="checkbox" ng-model="vm.newThing.complete" placeholder="Already Dun?" />-->
         <button ng-click="vm.createThing()">Add to Your Stay!</button>
     </div>
@@ -30,7 +32,7 @@
                 <tr>
                     <th>Relaxation Event</th>
                     <th>Complete Event!</th>
-                    <th>Update your Event!</th>
+                    <th>Update Event!</th>
                     <th>Delete Event!</th>
                 </tr>
             </thead>
@@ -52,6 +54,9 @@
             </tbody>
         </table>
     </div>
+    <src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>
