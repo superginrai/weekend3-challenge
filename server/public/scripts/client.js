@@ -10,6 +10,8 @@ app.controller('DoingStuffController', ['$http', function ($http) {
 
     self.newThing = {};
 
+    self.newThing.complete = false;
+
     //displays a demo stay at Hyrax High-Rise!!
     self.hyraxDemo = function () {
         $http({
@@ -73,12 +75,13 @@ app.controller('DoingStuffController', ['$http', function ($http) {
             });
     }
 
-    self.completeThing = function(thingToComplete) {
-        console.log('I completed this task!:', thingToComplete);
+    // request update to a Thing object in the database through the server
+    self.updateThing = function(thingToUpdate) {
+        console.log('I updated this:', thingToUpdate);
         $http({
             method: 'PUT',
             url: '/thing',
-            data: thingToComplete
+            data: thingToUpdate
         })
         .then(function(response) {
             console.log('response from PUT', response);
