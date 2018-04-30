@@ -49,3 +49,17 @@ th {
     color: tomato;
     background-color: tomato;
 }
+
+footer {
+    position: fixed;
+    padding-left: 50px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: whitesmoke;
+    text-shadow: 1px 1px 0px black, 1px 1px 0px rgba(0,0,0,0.15);
+}
+
+a:link {
+    color: yellow;
+}

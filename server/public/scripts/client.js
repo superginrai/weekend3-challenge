@@ -24,7 +24,7 @@ app.controller('DoingStuffController', ['$http', function ($http) {
             });
     }
 
-    // get request for all the things on your to-do list!!    
+    // get request for all the things on your to-do list!! (Demo is for entertainment purposes only and does not post to database)
     self.listThings = function () {
         $http({
             method: 'GET',
@@ -90,5 +90,5 @@ app.controller('DoingStuffController', ['$http', function ($http) {
     }
     
     self.listThings();
-    self.hyraxDemo();
+    self.hyraxDemo(); //Feel free to comment out the demo!!
 }])
