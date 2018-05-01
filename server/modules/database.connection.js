@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // Attempt to connect to mongodb
-const databaseUrl = MONGODB_URI || 'mongodb://localhost:27017/todo';
+const databaseUrl = process.env.MONGODB_URI || 'mongodb://localhost:27017/todo';
 mongoose.connect(databaseUrl);
 
 // Send message to the terminal on successful connection
